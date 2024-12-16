@@ -1,0 +1,299 @@
+/*-- scss:defaults --*/
+
+// Custom colours and variables
+
+$jet: #131516;
+$accent: #107895;
+$accent2: #9a2515;
+// $accent2: #e64173;
+$right-arrow: "\2192"; // Unicode character for right arrow
+$empty-circle: "\25CB"; // Unicode character for an open circle
+
+// fonts
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Zen+Maru+Gothic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans&display=swap);
+
+$font-family-sans-serif: "Noto Sans JP", sans-serif !default;
+$font-family-monospace: "Fira Code", monospace !default;
+$presentation-font-size-root: 24px;
+
+$body-bg: #fff !default;
+$body-color: $jet !default;
+$link-color: $accent !default;
+$selection-bg: #26351c !default;
+
+$presentation-heading-font: "Zen Maru Gothic", sans-serif !default;
+$presentation-heading-color: $jet !default;
+$presentation-heading-font-weight: lighter;
+
+$code-block-border-color: #93a1a1 !default;
+$code-color: $body-color;
+
+$white:    #fff !default;
+$gray-100: #fdf6e3 !default;
+$gray-200: #eee8d5 !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #839496 !default;
+$gray-700: #495057 !default;
+$gray-800: #073642 !default;
+$gray-900: #002b36 !default;
+$black:    #000 !default;
+
+/*-- scss:rules --*/
+
+.callout-title {
+  font-size: $presentation-font-size-root;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.callout-content {
+  font-size: $presentation-font-size-root * 0.9;
+}
+
+.callout-icon-container {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.callout-icon {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.reveal .callout.callout-titled .callout-icon::before {
+  margin-top: 14px;
+}
+
+.reveal .callout.callout-titled .callout-body>.callout-content>:last-child {
+  margin-bottom: 15.12px;
+  padding: 0px;
+}
+
+.reveal a {
+  line-height: 1.5em;
+}
+
+.reveal p {
+  font-weight: lighter;
+  margin-top: 1.25em;
+}
+
+.caption {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#title-slide {
+  text-align: left;
+
+  .title {
+    color: $body-color;
+    font-size: 2.5em;
+    font-weight: lighter;
+  }
+
+  .subtitle {
+    font-family: $presentation-heading-font;
+    color: $accent;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 0em;
+    font-weight: lighter;
+  }
+
+  .institute,
+  .quarto-title-affiliation,
+  .quarto-title-author-email {
+    font-family: Zen Maru Gothic;
+    font-size: 1em;
+    font-style: italic;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    font-family: Zen Maru Gothic;
+    font-size: 1.2em;
+    color: $body-color;
+  }
+  
+  .date,
+  .quarto-title-date {
+    font-family: Zen Maru Gothic;
+    font-size: 1.2em;
+    color: $body-color;
+  }
+
+  .quarto-title-authors {
+    display: flex;
+    justify-content: left;
+
+    .quarto-title-author {
+      padding-left: 0em;
+      padding-right: 0em;
+      width: 100%;
+    }
+  }
+}
+
+.reveal h2 {
+  font-weight: lighter;
+  font-size: 2em;
+}
+
+.reveal h3 {
+  color: $accent;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.reveal h4 {
+  color: $accent2;
+  font-weight: normal;
+  margin-top: 1.25em;
+}
+
+.small {
+  font-size: 0.9em;
+}
+
+.reveal .slide blockquote {
+  border-left: 6px solid $gray-300;
+  padding-left: 1.75em;
+}
+
+.reveal .slide blockquote p {
+  margin-top: 12px;
+}
+
+.aside-footnotes {
+  padding-bottom: 20px;
+}
+
+.alert {
+  color: $accent2;
+}
+
+.fg {
+  color: var(--col, $jet);
+}
+
+.bg {
+  background-color: var(--col, #fff);
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.reveal ul {
+  font-weight: lighter;
+  padding-left: 16px;
+
+  li::marker {
+    color: mix($accent, white, 70%);
+  }
+}
+
+.reveal ul ul {
+  list-style: inherit;
+
+  li::marker {
+    color: mix($accent, white, 60%);
+    font-size: 0.7em;
+  }
+}
+
+.reveal ol {
+  font-weight: lighter;
+  padding-left: 16px;
+
+  li::marker {
+    color: $accent;
+  }
+}
+
+.reveal .slide-menu-button {
+  position: fixed;
+  top: 6px;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-menu-button > * {
+  pointer-events: auto;
+}
+
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-chalkboard-buttons > * {
+  pointer-events: auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $accent;
+  border: 1px solid $accent;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+.etable {
+  width: 100%;
+  height: calc(100% - 3em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
