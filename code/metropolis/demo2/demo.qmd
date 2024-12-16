@@ -1,0 +1,24 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "Yosuke Abe"
+institute: "OSIPP, Osaka University"
+date: today
+format: 
+  revealjs: 
+    theme: 
+      - default
+      - ../../../assets/metropolis.scss
+    slide-number: true
+    date-format: long
+---
+
+## First page
+
+"First page" is the headline text. Note that a half-width space is required before the heading.
+
+## Second page
+
+You can break a line by leaving one line blank.
+
+Like this.

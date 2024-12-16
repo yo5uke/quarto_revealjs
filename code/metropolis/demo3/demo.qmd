@@ -1,0 +1,33 @@
+---
+format: 
+  revealjs: 
+    theme: 
+      - default
+      - ../../../assets/metropolis.scss
+    slide-number: true
+    date-format: long
+---
+
+## Code
+
+```{.r code-line-numbers="5,6"}
+library(tidyverse)
+library(tinytable)
+
+df <- mtcars |> 
+  select(1:5) |> 
+  filter(disp >= 400)
+
+tt(df)
+```
+
+```{.r code-line-numbers="|5|6"}
+library(tidyverse)
+library(tinytable)
+
+df <- mtcars |> 
+  select(1:5) |> 
+  filter(disp >= 400)
+
+tt(df)
+```

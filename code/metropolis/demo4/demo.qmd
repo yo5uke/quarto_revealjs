@@ -1,0 +1,31 @@
+---
+format: 
+  revealjs: 
+    theme: 
+      - default
+      - ../../../assets/metropolis.scss
+    slide-number: true
+    date-format: long
+    lang: en
+---
+
+## Figures
+
+```{r}
+#| echo: true
+#| label: fig-cars
+#| fig-cap: "This is a figure."
+
+plot(cars)
+```
+
+## Table
+
+```{r}
+#| echo: true
+#| label: tbl-mtcars
+#| tbl-cap: "This is an table."
+
+tinytable::tt(mtcars[1:5, 1:5])
+```
+
